@@ -1,0 +1,95 @@
+{
+
+
+
+//  // Use Vim hjkl to nevigate folders
+//      "workbench.list.keyboardNavigation": "simple",
+//     
+
+"workbench.list.automatickeyboardNavigation": true,
+
+"vim.useSystemClipboard": true,  // Uses SystemClipboard
+
+  "vim.insertModeKeyBindings": 
+  [
+    {
+        "before": ["a", "s", "d"],
+        "after": ["<Esc>"]
+    }
+  ],
+
+
+"vim.visualModeKeyBindingsNonRecursive": [
+  {
+    "before": ["p"],
+    "commands": ["editor.action.clipboardPasteAction"]
+  }
+],
+"terminal.integrated.inheritEnv": false,
+"editor.cursorBlinking": "expand",
+"emmet.includeLanguages": {
+  "javascript": ""
+},
+
+
+
+"javascript.updateImportsOnFileMove.enabled": "always",
+"editor.wordWrap": "on",
+"workbench.colorCustomizations": {
+  "editorLineNumber.foreground": "#00ff00"
+},
+"workbench.editor.titleScrollbarSizing": "large" //Title Scrollbar Sizing
+
+}
+
+
+
+/* 
+"security.workspace.trust.untrustedFiles": "open",
+"sync.quietSync": false,
+"sync.autoDownload": true,
+"sync.autoUpload": true,
+"sync.forceDownload": true,
+"sync.forceUpload": true,
+"window.zoomLevel": 0,
+"vim.insertModeKeyBindingsNonRecursive": [],
+
+
+{
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    }
+  ],
+
+
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  }
+}
+
+ */

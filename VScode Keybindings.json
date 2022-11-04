@@ -1,0 +1,376 @@
+// Place your key bindings in this file to override the defaults
+/* How to read keybindings
+    1.Every keybing have a 5 line gap 
+    2.Comment is there to explain 
+    
+*/
+
+[
+
+
+
+{ 
+    "key": "ctrl+a",                //To select all
+    "command": "editor.action.selectAll"
+ // Use Vim hjkl to nevigate folders
+
+},
+
+
+
+
+
+{
+    "key": "ctrl+x",                //To cut 
+    "command": "editor.action.clipboardCutAction"
+},
+
+
+
+
+
+{ "key": "ctrl+v",                //To past
+  "command": "editor.action.clipboardPasteAction" },
+
+
+
+
+
+// Ensure that tab button works in vim.
+  {
+    "key": "tab",
+    "command": "tab",
+    "when": "editorTextFocus && !editorTabMovesFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "outdent",
+    "when": "editorTextFocus && !editorTabMovesFocus"
+  },
+
+
+
+
+
+//Terminal shortcuts
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+ /* "Ctrl + C" */
+{    "key": "ctrl+alt+t",          // To open Terminal   
+     "command": "workbench.action.terminal.openNativeConsole",
+     "when": "!terminalFocus"
+},
+{
+    "key": "ctrl+shift+c",        // To open Terminal ---Turned off
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+},
+/* ------------------------------------------------------ */
+// Maximize panel ( Terminal )
+{
+  "key": "ctrl+space ctrl+m",   
+  "command": "workbench.action.toggleMaximizedPanel"
+},
+// Close Panel ( Terminal )
+{  
+  "key": "ctrl+space ctrl+x",
+  "command": "workbench.action.closePanel"
+},
+// Move Panel to Left
+{
+  "key": "ctrl+space ctrl+a",
+  "command": "workbench.action.positionPanelLeft"
+},
+// Move Panel to Right
+{
+  "key": "ctrl+space ctrl+d",
+  "command": "workbench.action.positionPanelRight"
+},
+// Move Panel to Bottom
+{
+  "key": "ctrl+space ctrl+s",
+  "command": "workbench.action.positionPanelBottom"
+},
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+/* 
+There was 2 dublicate shortcut "ctrl+c":-
+1st default to copy 
+2nd Vim extion to inter vim mode
+there for to "copy text" we turned off "Enter vim mode" 
+*/
+{
+    "key": "ctrl+c",             // Enter Vim mode ---Turned off  
+    "command": "-extension.vim_ctrl+c",
+    "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl" // 
+},
+
+
+
+
+
+// Add Selection To Next Find Match   ( did't work because of multiple debluicate shortcut )
+{ "key": "ctrl+d",                
+  "command": "editor.action.addSelectionToNextFindMatch",
+  "when": "editorFocus"
+},
+
+
+
+
+
+// To enter zen mode
+{
+  "key": "ctrl+k ctrl+z",
+  "command": "workbench.action.toggleZenMode"
+},
+{
+  "key": "ctrl+k z",
+  "command": "-workbench.action.toggleZenMode"
+},
+
+
+
+// Vim shortcuts Turned off because it overrides VS code Shortcuts
+{
+  "key": "ctrl+g",
+  "command": "-extension.vim_ctrl+g",
+  "when": "editorTextFocus && vim.active && vim.use<C-g> && !inDebugRepl"
+},
+
+
+
+
+// Move to previous or Next Editor
+{ "key": "alt+s",         
+  "command": "workbench.action.nextEditor" 
+},
+{ "key": "alt+a",            
+  "command": "workbench.action.previousEditor"
+},
+
+
+// Move Activate Editor Left or Right ( Useful for full-stack web dev )
+{
+  "key": "alt+shift+z",
+  "command": "moveActiveEditor",
+  "args": {
+    "to": "left"
+  }
+},
+{
+  "key": "alt+shift+x",
+  "command": "moveActiveEditor",
+  "args": {
+    "to": "right"
+  }
+},
+
+
+
+// Quick debug with console log
+{
+  "key": "alt+i",
+  "command": "editor.action.insertSnippet",
+  "when": "editorTextFocus",
+  "args": {
+    "snippet": "console.log('${TM_SELECTED_TEXT}$1')$2;"
+  }
+},
+
+
+
+
+// Traverse VScode IntelliSence suggestations with vim keybindings
+{
+  "key": "alt+shift+j",
+  "command": "selectNextSuggestion",
+  "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+},
+
+{
+  "key": "alt+shift+k",
+  "command": "selectPrevSuggestion",
+  "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+},
+
+
+
+
+// VSCode Shortcut Edit
+
+
+
+// Scroll
+{
+  // scrollLineUp
+  "key": "shift+alt+a",
+  "command": "scrollLineUp",
+  "when": "textInputFocus"
+},
+{
+  "key": "ctrl+up",
+  "command": "-scrollLineUp",
+  "when": "textInputFocus"
+},
+{
+  // scrollDown
+  "key": "shift+alt+s",
+  "command": "scrollLineDown",
+  "when": "textInputFocus"
+},
+{
+  "key": "ctrl+down",
+  "command": "-scrollLineDown",
+  "when": "textInputFocus"
+},
+
+
+
+
+// Use jl to move up , down in Quick open
+{
+  "key": "ctrl+j",
+  "command": "workbench.action.quickOpenSelectNext",
+  "when": "inQuickOpen"
+},
+{
+  "key": "ctrl+l",
+  "command": "workbench.action.quickOpenSelectPrevious",
+  "when": "inQuickOpen"
+},
+
+
+
+
+
+
+// Toggle Primary side bar Visibility
+{
+  "key": "ctrl+b",
+  "command": "workbench.action.toggleSidebarVisibility"
+},
+{
+  "key": "ctrl+b",
+  "command": "-workbench.action.toggleSidebarVisibility"
+},
+
+
+
+
+
+
+
+
+// Editor font Zoom in & Zoom Out
+{
+  "key": "ctrl+;",
+  "command": "editor.action.fontZoomIn"
+},
+{
+  "key": "ctrl+'",
+  "command": "editor.action.fontZoomOut"
+},
+
+
+{
+  // Change or select Language Mode
+  "key": "ctrl+k ctrl+m",
+  "command": "workbench.action.editor.changeLanguageMode",
+  "when": "!notebookEditorFocused"
+},
+{
+  "key": "ctrl+k m",
+  "command": "-workbench.action.editor.changeLanguageMode",
+  "when": "!notebookEditorFocused"
+},
+
+
+
+{
+// How to open file Explorer
+  "key": "shift+alt+q",
+  "command": "workbench.view.explorer",
+  "when": "viewContainer.workbench.view.explorer.enabled"
+},
+{
+  "key": "ctrl+shift+e",
+  "command": "-workbench.view.explorer",
+  "when": "viewContainer.workbench.view.explorer.enabled"
+},
+
+
+
+{
+  // Turn on screencast Mode
+  "key": "alt+[",
+  "command": "workbench.action.toggleScreencastMode" 
+},
+
+
+
+
+
+
+
+
+
+
+
+// Deleted Command of VIM 
+// Reason - VSCode Copy line command did not work because of it
+{
+  "key": "shift+alt+down",    
+  "command": "-extension.vim_cmd+alt+down",
+  "when": "editorTextFocus && vim.active && !inDebugRepl"
+},
+{
+  "key": "shift+alt+up",
+  "command": "-extension.vim_cmd+alt+up",
+  "when": "editorTextFocus && vim.active && !inDebugRepl"
+},
+
+
+// Reason - VSCode Page Updown / Page Down  not working
+{
+  "key": "ctrl+up",
+  "command": "-extension.vim_ctrl+up",
+  "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+},
+{
+  "key": "ctrl+down",
+  "command": "-extension.vim_ctrl+down",
+  "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+
+},
+{
+// Ctrl+w not working because Ctrl+w act as ctrl+z
+  "key": "ctrl+w",
+  "command": "-extension.vim_ctrl+w",
+  "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+},
+{
+  "key": "alt+f alt+n",
+  "command": "explorer.newFolder"
+},
+{
+  "key": "shift+f shift+n",
+  "command": "explorer.newFile"
+},
+
+
+
+
+
+
+
+
+
+
+
+
+]
